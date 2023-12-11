@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.scss" />
+    <title>CSS Grid</title>
+  </head>
+  <body>
+    <main>
+      <section class="container-properties">
+        <h1>Propiedades del Contenedor</h1>
+        <div class="example example1">
+          <pre>
+          .container {
+            display: grid;
+            grid-template-columns: 5rem 10rem 15rem;
+
+            grid-template-rows: 5rem 10rem;
+          }
+        </pre
+          >
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+        <div class="example example2">
+          <pre>
+          .container {
+            display: grid;
+            grid-template-columns: 5rem 10rem 15rem;
+
+            grid-auto-rows: 10rem;
+          }
+        </pre
+          >
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+        <div class="example example3">
+          <pre>
+          .container {
+            display: grid;
+            grid-template-rows: 5rem 10rem;
+            grid-auto-columns: 10rem;
+            grid-auto-flow: column;
+          }
+        </pre
+          >
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="alignment-properties">
+        <h1>Propiedades de alineación</h1>
+        <div class="example example1">
+          <pre>
+            .container {
+              display: grid;
+              grid-template-columns: 10rem 10rem 10rem;
+              grid-auto-rows: 10rem;
+              gap: 0.5rem;
+
+              justify-content: center;
+              align-content: center;
+            }
+
+          </pre>
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+        <div class="example example2">
+          <pre>
+            .container {
+              display: grid;
+              grid-template-columns: 10rem 10rem 10rem;
+              grid-auto-rows: 10rem;
+              gap: 0.5rem;
+
+              place-content: center;
+            }
+
+          </pre>
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="location-properties">
+        <h1>Propiedades de Ubicación</h1>
+        <div class="example example1">
+          <pre>
+            .container {
+              display: grid;
+              grid-template-columns: 10rem 10rem 10rem;
+              grid-template-rows: 7.5rem 7.5rem 7.5rem;
+              place-content: center;
+              gap: .5rem;
+            }
+            .item-1{
+              grid-column: 1 / 4;
+            }
+            .item-2{
+              grid-row: 2 / 4;
+            }
+            .item-3{
+              grid-area: 2 / 2 / 4 / 4;
+            }
+          </pre>
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+          </div>
+        </div>
+        <div class="example example2">
+          <pre>
+            .container {
+              display: grid;
+              grid-template-columns: 10rem 10rem 10rem;
+              grid-template-rows: 7.5rem 7.5rem 7.5rem;
+              place-content: center;
+              gap: .5rem;
+              grid-template-areas:
+                "header header header"
+                "side main main"
+                "side main main"
+              ;
+            }
+            .item-1{
+              grid-area: header;
+            }
+            .item-2{
+              grid-area: side;
+            }
+            .item-3{
+              grid-area: main;
+            }
+          </pre>
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+          </div>
+        </div>
+        <div class="example example3">
+          <pre>
+            .container {
+              display: grid;
+              grid-template-columns: 10rem 10rem 10rem;
+              grid-template-rows: 7.5rem 7.5rem 7.5rem;
+              place-content: center;
+              gap: .5rem;
+            }
+            .item-2{
+              grid-column: 2 / 4;
+            }
+            .item-3{
+              grid-column: 1 / 3;
+            }
+            .item-4{
+              grid-area: 2 / 3 / 4 / 4;
+            }
+          </pre>
+          <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="special-features">
+        <h1>Funciones Especiales</h1>
+        <pre>
+            .container {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+              grid-auto-rows: 10rem;
+              gap: .5rem;
+            }
+        </pre>
+        <div class="container">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+          <div class="item">7</div>
+          <div class="item">8</div>
+        </div>
+      </section>
+      <section class="challenge">
+        <div class="challenge__container">
+          <div class="hero">
+            <div class="hero__info">
+              <h1>
+                Check the <br />
+                best food
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et id
+              </p>
+              <button>Book a table</button>
+            </div>
+            <img class="hero__img" src="./assets/hero.png" alt="hero" />
+          </div>
+          <div class="dishes">
+            <h2>Our services</h2>
+            <div class="dishes__grid">
+              <img
+                class="dishes__item dishes__item--big"
+                src="./assets/video.png"
+                alt="image"
+              />
+              <img class="dishes__item" src="./assets/dish1.png" alt="image" />
+              <img class="dishes__item" src="./assets/dish2.png" alt="image" />
+              <img class="dishes__item" src="./assets/dish3.png" alt="image" />
+              <img class="dishes__item" src="./assets/dish4.png" alt="image" />
+            </div>
+          </div>
+          <div class="menu">
+            <h2>Home menu</h2>
+            <div class="menu__grid">
+              <div class="grid__item">
+                <img src="./assets/plate1.png" alt="image" />
+              </div>
+              <div class="grid__item">
+                <img src="./assets/plate2.png" alt="image" />
+              </div>
+              <div class="grid__item">
+                <img src="./assets/plate3.png" alt="image" />
+              </div>
+              <div class="grid__item">
+                <img src="./assets/plate4.png" alt="image" />
+              </div>
+              <div class="grid__item">
+                <img src="./assets/plate5.png" alt="image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
