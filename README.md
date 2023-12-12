@@ -1,5 +1,7 @@
 # Resumen de Curso de CSS Grid
 
+[Project Page](https://profound-seahorse-a1d1d7.netlify.app/ "Project Page")
+
 ## ¿Qué es CSS Grid Layout?
 
 Css grid es una especificación de CSS para realizar layouts más dinámicos. Anteriormente sólo se podía usar tablas para realizar lo que ahora podemos hacer con Grid de manera mucho más sencilla. Nos permite dividir una página en áreas o regiones principales, por definir la relación en términos de tamaño, posición y capas construidas a partir de HTML.
